@@ -1,5 +1,6 @@
 package com.bridgelabz.employeepayrollservice;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -112,6 +113,11 @@ public class EmployeePayrollService
         else if(ioService.equals(IOService.FILE_IO)){
             new EmployeePayrollFileIOService().writeData(employeePayrollDataList);
         }
+    }
+
+    public void addEmployeeToPayroll(String employeeName, String Department,String gender, double basic_pay, LocalDate start)
+    {
+        employeePayrollDataList.add(employeePayrollDBService.addEmployeeToPayroll(employeeName,Department, gender, basic_pay, start));
     }
 
     public static void main(String[] args)
