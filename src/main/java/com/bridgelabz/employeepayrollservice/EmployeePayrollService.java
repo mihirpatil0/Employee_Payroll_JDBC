@@ -9,6 +9,7 @@ public class EmployeePayrollService
     {
         DB_IO
     }
+
     private List<EmployeePayrollData> employeePayrollDataList;
     EmployeePayrollDBService employeePayrollDBService = new EmployeePayrollDBService();
 
@@ -34,17 +35,24 @@ public class EmployeePayrollService
         return employeePayrollDataList.get(0).equals(getEmployeePayrollData(name));
     }
 
-    private EmployeePayrollData getEmployeePayrollData(String name) {
+    private EmployeePayrollData getEmployeePayrollData(String name)
+    {
         return this.employeePayrollDataList.stream()
                 .filter(employeePayrollData -> employeePayrollData.name.equals(name)).findFirst().orElse(null);
     }
 
-    public void updateEmployeeBasic_pay(String name, double BasicPay) {
+    public void updateEmployeeBasic_pay(String name, double BasicPay)
+    {
         int result = employeePayrollDBService.updateEmployeeData(name, BasicPay);
         if (result == 0)
             return;
         EmployeePayrollData employeePayrollData = this.getEmployeePayrollData(name);
         if (employeePayrollData != null)
             employeePayrollData.BasicPay = BasicPay;
+    }
+    public List<EmployeePayrollData> retrieveEmployeesForGivenDataRange(String startDate, String endDate)
+    {
+        List<EmployeePayrollData> employeePayrollDataList = employeePayrollDBService.retrieveEmployeePayrollDataRange(startDate, endDate);
+        return employeePayrollDataList;
     }
 }
