@@ -7,29 +7,34 @@ public class EmployeePayrollData
 {
     public int id;
     public String name;
-    public double basic_Pay;
-    public LocalDate start;
+    public double BasicPay;
+    public LocalDate startDate;
 
-    public EmployeePayrollData(int id, String name, double basic_pay, LocalDate startDate) {
+    public EmployeePayrollData(int id, String name, double BasicPay, LocalDate startDate)
+    {
         this.id = id;
         this.name = name;
-        this.basic_Pay= basic_pay;
-        this.start = startDate;
+        this.BasicPay= BasicPay;
+        this.startDate = startDate;
     }
 
     @Override
-    public String toString() {
-        return "EmployeePayrollData{" + "id=" + id + ", name='" + name + '\'' + ", salary=" + basic_Pay + ", startDate="
-                + start + '}';
+    public String toString()
+    {
+        return "EmployeePayrollData{" + "id=" + id + ", name='" + name + '\'' + ", salary=" + BasicPay + ", startDate="
+                + startDate + '}';
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o)
+    {
         if (this == o)
+        {
             return true;
+        }
         if (o == null || getClass() != o.getClass())
             return false;
         EmployeePayrollData that = (EmployeePayrollData) o;
-        return id == that.id && Double.compare(that.basic_Pay, basic_Pay) == 0 && Objects.equals(name, that.name);
+        return id == that.id && Double.compare(that.BasicPay, BasicPay) == 0 && Objects.equals(name, that.name);
     }
 }
