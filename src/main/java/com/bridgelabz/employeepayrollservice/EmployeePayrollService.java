@@ -16,10 +16,12 @@ public class EmployeePayrollService
     {
         this.employeePayrollDataList = employeePayrollDataList;
     }
+
     public EmployeePayrollService()
     {
         this.employeePayrollDataList = new ArrayList<EmployeePayrollData>();
     }
+
     public List<EmployeePayrollData> readEmployeePayrollData(IOService ioService)
     {
         this.employeePayrollDataList = employeePayrollDBService.readData();
@@ -32,14 +34,12 @@ public class EmployeePayrollService
         return employeePayrollDataList.get(0).equals(getEmployeePayrollData(name));
     }
 
-    private EmployeePayrollData getEmployeePayrollData(String name)
-    {
+    private EmployeePayrollData getEmployeePayrollData(String name) {
         return this.employeePayrollDataList.stream()
                 .filter(employeePayrollData -> employeePayrollData.name.equals(name)).findFirst().orElse(null);
     }
 
-    public void updateEmployeeBasic_pay(String name, double BasicPay)
-    {
+    public void updateEmployeeBasic_pay(String name, double BasicPay) {
         int result = employeePayrollDBService.updateEmployeeData(name, BasicPay);
         if (result == 0)
             return;

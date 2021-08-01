@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.employeepayrollservicetest.EmployeePayrollDBServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-01T12:40:56" hostname="NARUTO" time="0.378">
+<testsuite name="com.bridgelabz.employeepayrollservicetest.EmployeePayrollDBServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-08-01T12:50:38" hostname="NARUTO" time="0.289">
   <properties/>
-  <testcase name="givenNewEmployeeSalaryShouldUpdateWithDatabase()" classname="com.bridgelabz.employeepayrollservicetest.EmployeePayrollDBServiceTest" time="0.378"/>
+  <testcase name="givenNewEmployeeSalaryShouldUpdateWithDatabase()" classname="com.bridgelabz.employeepayrollservicetest.EmployeePayrollDBServiceTest" time="0.274"/>
+  <testcase name="givenEmployeePayrollInDB_WhenRetrieved_ShouldMatchEmployeeCount()" classname="com.bridgelabz.employeepayrollservicetest.EmployeePayrollDBServiceTest" time="0.007"/>
+  <testcase name="givenEmployeePayrollInDB_WhenRetrieved_ShouldnotMatchEmployeeCount()" classname="com.bridgelabz.employeepayrollservicetest.EmployeePayrollDBServiceTest" time="0.006"/>
   <system-out><![CDATA[connecting to database
+Connected Successfully!
+Driver Loaded
+ com.mysql.cj.jdbc.Driver
+connecting to database
+Connected Successfully!
+Driver Loaded
+ com.mysql.cj.jdbc.Driver
+connecting to database
 Connected Successfully!
 Driver Loaded
  com.mysql.cj.jdbc.Driver

@@ -14,7 +14,7 @@ public class EmployeePayrollDBServiceTest
     public void givenEmployeePayrollInDB_WhenRetrieved_ShouldMatchEmployeeCount() {
         EmployeePayrollDBService employeePayrollDBService = new EmployeePayrollDBService();
         List<EmployeePayrollData> employeePayrollDataList = employeePayrollDBService.readData();
-        Assertions.assertEquals(6, employeePayrollDataList.size());
+        Assertions.assertEquals(5, employeePayrollDataList.size());
     }
     @Test
     public void givenEmployeePayrollInDB_WhenRetrieved_ShouldnotMatchEmployeeCount() {
@@ -23,8 +23,7 @@ public class EmployeePayrollDBServiceTest
         Assertions.assertNotSame(4, employeePayrollDataList.size());
     }
     @Test
-    public void givenNewEmployeeSalaryShouldUpdateWithDatabase()
-    {
+    public void givenNewEmployeeSalaryShouldUpdateWithDatabase() {
         EmployeePayrollService employeePayrollService = new EmployeePayrollService();
         List<EmployeePayrollData> employeePayrollDataList = employeePayrollService
                 .readEmployeePayrollData(EmployeePayrollService.IOService.DB_IO);
